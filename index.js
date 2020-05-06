@@ -5,7 +5,7 @@ class Formatter {
     return upper+str;
   }
   static sanitize(str){
-    return str.replace(/\W/g, '');
+    return str.replace(/[^\w- ']/g, '');
   }
   static titleize(str){
     let words = str.split(" ");
