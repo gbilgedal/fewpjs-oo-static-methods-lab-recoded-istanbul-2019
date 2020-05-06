@@ -1,18 +1,24 @@
 class Formatter {
   static capitalize(str){
-    str.charAt(0).toUpperCase();
-    return str;
+    let upper = str.charAt(0).toUpperCase();
+    str = str.slice(1);
+    return upper+str;
   }
   static sanitize(str){
-
+    return str.replace(/\W/g, '');
   }
   static titleize(str){
-    let words = str.split("0");
+    let words = str.split(" ");
     for(let i = 0; i<words.length;i++){
-      if((i !=0 )&&( words[i].equals("a")|| words[i].equals("an")|| words[i].equals("the")|| words[i].equals("but")|| words[i].equals("of")|| words[i].equals("and")|| words[i].equals("for")|| words[i].equals("at")|| words[i].equals("by")|| words[i].equals("from")))
+      console.log(words[i])
+      if(i == 0){
+        words[i] = Formatter.capitalize(words[i]);
+      }
+      if(words[i]== "a"|| words[i]=="an"|| words[i]=="the"|| words[i]=="but"|| words[i]=="of"|| words[i]=="and"|| words[i]=="for"|| words[i]=="at"|| words[i]=="by"|| words[i]=="from"){
 
+      }
       else{
-        words[i] = capitalize(words[i]);
+        words[i] = Formatter.capitalize(words[i]);
       }
     }
     words = words.join(" ");
