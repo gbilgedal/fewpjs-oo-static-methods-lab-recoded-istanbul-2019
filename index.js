@@ -4,7 +4,7 @@ class Formatter {
     return str;
   }
   static sanitize(str){
-    
+
   }
   static titleize(str){
     let words = str.split("0");
